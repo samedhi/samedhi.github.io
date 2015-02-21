@@ -1,0 +1,14 @@
+# Site settings
+title: Unstructured
+email: samedhi@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  A journal of what I am working on and thinking about. I provide here
+  links to every project I work upon. I also periodically review things,
+  and sometimes, if you are good, give my opinion. 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: samedhi
+github_username:  samedhi
+
+# Build settings
+markdown: kramdown
