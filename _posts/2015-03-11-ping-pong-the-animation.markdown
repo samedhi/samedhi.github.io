@@ -10,6 +10,6 @@ First, lets get this out of the way. The animation is a turn off initially. You 
 
 The music was also quite good. I don't take much notice of music usually, but this was of high quality and well synched to the different moods of different scenes.
 
-The characters though are what really makes this a masterpiece. It is rare to see a series that charts the interactions and progress of four to six characters so well. Every single one of these characters is believable. Every single one could walk into the real world without seeming out of place. Every single one of them is interesting in their own right. Every single one, even the ones you sometimes don't like, is worthy of your attention. They make animated characters seem more complete, complex, and real than most live action performances. This is what animation is about.
+The characters are what really makes this a masterpiece. It is rare to see a series that charts the interactions and progress of four to six characters so well. Every single one of these characters is believable. Every single one could walk into the real world without seeming out of place. Every single one of them is interesting in their own right. Every single one, even the ones you sometimes don't like, is worthy of your attention. They make animated characters seem more complete, complex, and real than most live action performances. This is what animation is about.
 
 Just. Excellent.
