@@ -14,10 +14,10 @@ I think animes like this may actually illustrate a dividing lines between narrat
 
 I have a few recomendations.
 
-1) Watch only the first 13 episodes. The last (14-16) are rubbish and practically nonsensical.
-2) Appreciate the art and the style that went into this. I was especially impressed by the attention to details in the set pieces and the characters clothing. I liked the outfits a good deal, as they were clearly inspired from the 1930's but actually morphed to be attractive by modern standards.
-3) The music is catchy, the opening credit scene is actually well done.
-4) Note the fact that somebody built an anime without using most of the conventional tropes of the genre.
-5) Might consider reading the novels beforehand. I have not, but I felt I might enjoy the series more had I done so.
-6) I watched the sub (arrogant purist that I am), but evidently the English dub is actually quite good. Might be worth giving it a shot.
-7) Finally, I watched this series over maybe 10 days, watching an episode or two a day. I would instead recommend watching this over a weekend. There are a lot of characters and interactions all over the place. It can be easier to remember who was what if it is all "fresh" in your head.
+1. Watch only the first 13 episodes. The last (14-16) are rubbish and practically nonsensical.
+2. Appreciate the art and the style that went into this. I was especially impressed by the attention to details in the set pieces and the characters clothing. I liked the outfits a good deal, as they were clearly inspired from the 1930's but actually morphed to be attractive by modern standards.
+3. The music is catchy, the opening credit scene is actually well done.
+4. Note the fact that somebody built an anime without using most of the conventional tropes of the genre.
+5. Might consider reading the novels beforehand. I have not, but I felt I might enjoy the series more had I done so.
+6. I watched the sub (arrogant purist that I am), but evidently the English dub is actually quite good. Might be worth giving it a shot.
+7. Finally, I watched this series over maybe 10 days, watching an episode or two a day. I would instead recommend watching this over a weekend. There are a lot of characters and interactions all over the place. It can be easier to remember who was what if it is all "fresh" in your head.
