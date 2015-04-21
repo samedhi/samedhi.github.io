@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Kill La Kill"
-date:   2015-04-20 12:30:00
 categories: [review, anime]
 ---
 
@@ -19,6 +18,6 @@ Ok, enough amateur psychology and history. How was [Kill la Kill](http://en.wiki
 
 As I said in the beginning, I think every man can get excited at least one time over a tournament fighting series. Most men will experience it once, get incredibly excited about it, eat sleep and dream it, and then slowly but surely move on. Future "tournament" anime series will just not be attractive to them in the same way that their first one was. Eventually, you accept that these sort of series are in fact juvenile. As you get older, the desire for easy answers and clear rites fades, life is nuanced and more complex than that.
 
-And then Kill la Kill comes along. Kill la Kill repackages the excitement you experienced with your first tournament series. Tongue firmly in cheek, it turns the dial on this genres attribute to 11. Clearly aware of the ludicrousness and naive simplicity of its inspirational material, it pokes fun at it every chance it gets. Kill la Kill, to my mind, would actually make less sense if you have not seen a tournament fighting anime before. It's plot is ridiculous but it just roles with it, pushing the boundaries but never actually breaking the fourth wall. Even the fan service is done in a way that pokes fun at the obsessive amount of fan service in anime.
+And then Kill la Kill comes along. Kill la Kill repackages the excitement you experienced with your first tournament series. Tongue firmly in cheek, it turns the dial on this genres attribute to 11. Clearly aware of the ludicrousness and naive simplicity of its inspirational material, it pokes fun at it every chance it gets. To my mind, Kill la Kill would actually make less sense if you have not seen a tournament fighting anime before. It's plot is ridiculous, it just roles with it. Overly talkative characters, other characters comment on monologuing. It pushes the boundaries but never actually breaks the fourth wall. Even the fan service is done in a way that pokes fun at the obsessive amount of fan service in anime, while embracing it completely.
 
 Simply put, this is a great anime to watch after you have already experienced on genuine "tournament" anime series. It deconstructs everything that you though was so honest and important in these original series, but does so with such good nature and humor that you don't actually mind.
