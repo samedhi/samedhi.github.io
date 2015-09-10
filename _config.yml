@@ -12,3 +12,6 @@ github_username:  samedhi
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-feed
