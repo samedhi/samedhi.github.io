@@ -2,7 +2,7 @@
 layout: post
 title:  "Baccano!"
 date:   2015-03-20 21:00:00
-categories: jekyll update
+categories: [review, anime]
 ---
 I really liked the Watchmen movie, I was already a fan of the comic book beforehand. However, post movie, I could definitely see how the movie might not be as appealing had I not read the source material. Baccano! is based on a light novel series that I have not read. The anime felt like it was eliding over the source material. I enjoyed it, but had some real problems with the plot.
 

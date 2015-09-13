@@ -2,7 +2,7 @@
 layout: post
 title:  "A Most Violent Year"
 date:   2015-03-08 19:51:00
-categories: jekyll update
+categories: [review, movie]
 ---
 Odd. I was actually quite engaged throughout the entire movie. And yet, the lack of a climactic ending left me somewhat unfulfilled. It is funny. You can enjoy every moment, but if it is missing certain pieces, your memory of things will be one of disappointment.
 

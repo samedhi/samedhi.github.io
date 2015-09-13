@@ -13,8 +13,20 @@ layout: default
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-	  {{ post.excerpt }}
         </h2>
+	{{ post.excerpt }}
+
+	{% if post.categories contains "book" %}
+	<i class="material-icons">local_library</i>
+	{% elsif post.categories contains "movie" %}
+	<i class="material-icons">local_movies</i>
+	{% elsif post.categories contains "anime" %}
+	<i class="material-icons">live_tv</i>
+	{% elsif post.categories contains "video-game" %}
+	<i class="material-icons">games</i>
+	{% elsif post.categories contains "code" %}
+	<i class="material-icons">bug_report</i>
+	{% endif %}
       </li>
     {% endfor %}
   </ul>

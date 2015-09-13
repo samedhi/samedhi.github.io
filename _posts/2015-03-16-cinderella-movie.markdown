@@ -2,7 +2,7 @@
 layout: post
 title:  "Cinderella"
 date:   2015-03-16 19:00:00
-categories: jekyll update
+categories: [review, movie]
 ---
 Good Movie, executed well enough, just failed to catch me.
 

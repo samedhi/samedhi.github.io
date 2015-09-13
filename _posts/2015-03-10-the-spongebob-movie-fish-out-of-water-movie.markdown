@@ -2,7 +2,7 @@
 layout: post
 title:  "SpongeBob Squarepants: Sponge out of Water"
 date:   2015-03-10 19:00:00
-categories: jekyll update
+categories: [review, movie]
 ---
 I know next to nothing about Spongebob et all. Previous to this, the most I had seen of this series was a few minutes at a McDonald's as I was waiting for my order.
 

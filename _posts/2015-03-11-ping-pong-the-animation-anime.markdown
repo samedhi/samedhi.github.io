@@ -2,7 +2,7 @@
 layout: post
 title:  "Ping Pong - The Animation"
 date:   2015-03-11 19:51:00
-categories: jekyll update
+categories: [review, anime]
 ---
 Wow, this was good.
 

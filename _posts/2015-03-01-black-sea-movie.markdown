@@ -2,7 +2,7 @@
 layout: post
 title:  "Black Sea"
 date:   2015-03-01 19:51:00
-categories: jekyll update
+categories: [review, movie]
 ---
 Saw "Black Sea" this evening. Enjoyed it, but am kind of a sucker for Submarine movies.
 

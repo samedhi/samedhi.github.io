@@ -2,7 +2,7 @@
 layout: post
 title:  "Childhood (French) Theme Songs!"
 date:   2015-02-20 19:51:00
-categories: jekyll update
+categories: [silly]
 ---
 Goofed around pretty much all day; the post below is pretty much all I have to show for it.
 

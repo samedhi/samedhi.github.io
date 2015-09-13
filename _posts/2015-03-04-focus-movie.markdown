@@ -2,7 +2,7 @@
 layout: post
 title:  "Focus"
 date:   2015-03-04 19:51:00
-categories: jekyll update
+categories: [review, movie]
 ---
 Focus was an 80% in most dimensions. Unfortunately, this leaves you feeling that the movie was worse than the sum of its parts.
 

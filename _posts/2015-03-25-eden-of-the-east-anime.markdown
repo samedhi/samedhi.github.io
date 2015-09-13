@@ -2,7 +2,7 @@
 layout: post
 title:  "Eden of the East"
 date:   2015-03-25 12:30:00
-categories: jekyll update
+categories: [review, anime]
 ---
 Eden of the East is responsible for introducing me to the notion of NEETs. At many points in my life, I guess I would qualify as a NEET myself. NEET is a person who is "Not in Education, Employment, or Training". The term evidently originated in the United Kingdoms, but really took off as a talking point in Japanese culture and politics.
 
