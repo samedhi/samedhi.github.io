@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Fire Upon the Deep"
-date:   2015-10-06 22:00:00
+date:   2015-11-25 22:00:00
 categories: [review, book]
 ---
 
