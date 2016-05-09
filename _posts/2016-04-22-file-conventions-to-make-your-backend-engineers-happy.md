@@ -10,12 +10,14 @@ A random list of file conventions that make me happy. Although these do not appl
 Don't make up your own format. Please. Just use CSV (note: does not have to be commas, any unused delimiter will work, or use quoting characters within your CSV if you have to).
 
 ## Don't use slashes in the filename
+
 This hurts. If you include slashes in the filename, it makes is look like the file is actually a directory listing. Furthermore, modern storage system like gcs and s3 don't really have directories (they are really just a bunch of objects in a bucket). However, they will logically present these objects as if they are made up of directories if you include slashes in the names. This is odd because when you download individual files they will download as files. When you view them the files within the s3 viewer they will appear as directories. when you (r)sync the buckets the files  they will appear as directories... It just gets messy. Just don't use directories. Use a flat bucket of files.
 
 ## Include everything of a homogenous type within a single directory/bucket
+
 I think buckets should basically be treated like typed arrays/vectors/list. You should only have a single type of thing within them. Don't mix multiple different types of things as you are then forcing someone using said bucket to filter on what they need. Really, if you have multiple types of things, use multiple buckets.
 
-tldr; Make it so the names of files are automatically sorted in some usefull way
+## Make it so the names of files are automatically sorted in some usefull way
 
 Let me provide an example.
 
