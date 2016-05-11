@@ -202,3 +202,22 @@ pre {
         }
     }
 }
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    .video {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3px;
+        margin: 10px;
+        margin-bottom: 30px;
+        .subtext {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
