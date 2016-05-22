@@ -41,8 +41,19 @@
               <span class="username">{{ site.twitter_username }}</span>
             </a>
           </li>
+	  {% endif %}
+
+	  {% if site.stackoverflow_username && site.stackoverflow_id%}
+          <li>
+	    <a href="http://stackoverflow.com/users/{{site.stackoverflow_id}}/{{ site.stackoverflow_username }}?tab=profile">
+	      <span class="icon  icon--twitter">
+		<img src="assets/stackoverflow.svg" width="16px" height="16px"/>
+              </span>
+	      <span class="username">{{ site.stackoverflow_username }}</span>
+            </a>
+          </li>
           {% endif %}
-        </ul>
+	</ul>
       </div>
 
       <div class="footer-col  footer-col-3">
