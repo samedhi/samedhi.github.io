@@ -13,6 +13,6 @@ Sometimes though, I want to actually relax and browse. I then need to edit `/etc
 
 Having to edit a file on a daily basis is painful. I can do better.
 
-I am on a Mac, so I use launchCTL to create two scripts that run at 22:00 and 2:00. The 2:00 script returns my computer to the "focused" state, limiting what sites I can visit. The 22:00 script puts my computer in a "relaxed" state, allowing me to browse until bedtime. Both of these files should be in your `/Library/LaunchDaemons` directory. The advantage of putting these files in `/Library/LaunchDaemons` as opposed to `~/Library/LaunchAgents` is that they are run whenever the computer is on, rather than just when you are logged in. Also, they will run upon wake even if the trigger time occured while the computer was asleep.
+I am on a Mac, so I use [launchd](http://launchd.info/) to create two scripts that run at 22:00 and 2:00. The 2:00 script returns my computer to the "focused" state, limiting what sites I can visit. The 22:00 script puts my computer in a "relaxed" state, allowing me to browse until bedtime. Both of these files should be in your `/Library/LaunchDaemons` directory. The advantage of putting these files in `/Library/LaunchDaemons` as opposed to `~/Library/LaunchAgents` is that they are run whenever the computer is on, rather than just when you are logged in. Also, they will run upon wake, even if the trigger time occured while the computer was asleep.
 
 [Daemonic Agents - Code example that includes /etc.hosts files that I find useful](https://github.com/samedhi/daemonic-agents)
