@@ -2,7 +2,6 @@
 layout: post
 categories: [review, movie]
 ---
-### Why?
 
 At the time of this writing, there is [exactly one review on Rotten Tomatoes](https://www.rottentomatoes.com/m/soulmate_2016/) for this film. 
 
