@@ -16,4 +16,10 @@ It isn't so much the velocity though, it is the rate of change. It is the fact t
 
 The camera work was also fresh. The shots were consistenly set up in interesting ways. People looking across each other in bed. Slow motion scenes to capture moments of youth (implying memory). Though there were a number of talking head scenes; however, I felt like I was often getting a sense of the room, of the space, even within those scenes. I lack the vocabulary to acurately describe what I was seeing, but I could feel it. Somebody really thought hard about how to set up scenes that fit the on screen action.
 
-Reminded me a bit of [Our Little Sister](https://www.rottentomatoes.com/m/our_little_sister/), though less maudlin. Anway, long story short, I thought it was a great movie. It was interesting, I was engaged, and the acting was fantastic.
+Reminded me a bit of [Our Little Sister](https://www.rottentomatoes.com/m/our_little_sister/), though more maudlin. I thought it was a great movie. It was interesting, I was engaged, and the acting was enchanting.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/soulmate.jpeg"/>
+</div>
+</div>
