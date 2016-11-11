@@ -11,6 +11,6 @@ I did enjoy the contrast between the clean cut FBI agents and the result driven 
 
 <div class="videos">
 <div class="video">
-<img src="/assets/siccaro.jpg"/>
+<img src="/assets/sicario.jpg"/>
 </div>
 </div>
