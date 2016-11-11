@@ -16,9 +16,6 @@ def post_user():
     """
     Create a new User.
 
-    Headers:
-    Authorization: Bearer <Token>
-
     REQUEST Body (as JSON):
     {
     'first_name': <String>,         # 'Marlon'
@@ -30,6 +27,5 @@ def post_user():
 
     RESPONSE of 200 indicates success.
     """
-
-    # Code to create user goes here
+    pass # Code to create user goes here
 {% endhighlight %}
