@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [music, concert]
+categories: [music, concert, event]
 ---
 
 

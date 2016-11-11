@@ -13,3 +13,9 @@ I thought it was interesting that Watneys story was told with a “Captain’s l
 I enjoyed the sciency stuff, but am not qualified enough to really critic it one way or the other. Having said that, it seems plausible based on my limited understandings. At least there was no unexplained magic.
 
 Anyway, not too much to report here. I enjoyed it, you should read it, I hope the movie coming out soon will be good.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/the-martian.jpg"/>
+</div>
+</div>

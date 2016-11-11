@@ -30,3 +30,9 @@ I also enjoyed that punishment basically involved just taking time from you. No 
 I didn't really understand what the actual purpose of oOCTattoos was. Were they processing circuitry? Batteries? Amplifiers? Receivers? Transmitters? I mean why do we have these goofy tattoos? Why couldn't necessary electronics/devices just be installed sub-dermally? Why tattoos?
 
 As near as I could tell there were no actual "direct brain interfaces". Even Gore Burnelli, who was one of the most octatted people ever, appeared to be receiving his inputs primarily as additional senses (sense of smell was most often mentioned) or as just visual overlays. It just seemed weird that with all the advantages they had, and the present day state of mind machine interfaces (cochlear implants and bionic limbs) that this far in the future we wouldn't have much more advanced bridges between the digital and the mind.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/pandoras-star.jpg"/>
+</div>
+</div>

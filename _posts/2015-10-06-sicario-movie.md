@@ -1,6 +1,5 @@
 ---
 layout: post
-title:  "sicario"
 date:   2015-10-06 22:00:00
 categories: [review, movie]
 ---
@@ -9,3 +8,9 @@ Saw "Sicario" this evening. It was a pretty decent flick. Remined me a bit of th
 I guess the take home message of the film is that the only way to deal with lawless entities like the Cartels would be to meet them with violence. The state, as a system of laws, is not really capable of inflicting the sort of violence neccessary to check them. The state therefore looks to outside contractors to do their violence for them. Is this acceptable? Is the result actually better? Is the premise even sound?
 
 I did enjoy the contrast between the clean cut FBI agents and the result driven CIA agents. I can't honestly decide who is right in these sort of situations. Of course, I don't know whether the movies portrayal of each side correctly personifies reality. It was still an interesting character study.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/siccaro.jpg"/>
+</div>
+</div>

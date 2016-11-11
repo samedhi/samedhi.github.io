@@ -27,3 +27,10 @@ To be more enjoyed, you really should play the game at a stronger (like an hour 
 Finally, I will talk about the ending. I thought the pacing and plot changes at the end were the best part of this game. All through the story, you were seeing this Thaos guy and thinking him some fundamentalist worshiper of an out of favor goddess. At the end, it is revealed that he isn't fundamentalist, in fact, he is one of the few people who actually knows that the gods are a fabrication of man. He isn't empowering his god for her glory, he is doing so for the future of mankind. It was an interesting argument. Would humanity be better served believing in gods? Gods that give their life meaning and purpose? Or is it better to face the simple (though barren) dust to dust truth of existence? I have to say I was somewhat sympathetic to Thaos' cause. That is good writing. I wouldn't myself want to worship any god (real or false), but I feel that many peoples lives might be enriched if they had something more to believe in. Put in sci-fi terms, what if we could program AI's that could act as Gods to humanity, and then told humanity that they were real gods? Would the happiness and fulfillment that a great deal of humanity experiences from this be worth the lie? It is a good question. Ha, wouldn't that be a awesome sequel to PoE? turns out all "souls" are really just computational resources in some simulation. Gods are just assembled by putting together enough computation. I don't think it is going to happen, that would piss of so many fans.
 
 Great Game.
+
+
+<div class="videos">
+<div class="video">
+<img src="/assets/pillars-of-eternity-hero-edition.jpg"/>
+</div>
+</div>

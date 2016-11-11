@@ -26,3 +26,9 @@ Given the choice between a monstrous tyrant who provides stability and a slow de
 
 tldr;
 "Vote for Joe. Everything else is slow death."
+
+<div class="videos">
+<div class="video">
+<img src="/assets/mad-max-fury-road.jpg"/>
+</div>
+</div>

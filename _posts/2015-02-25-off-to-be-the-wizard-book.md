@@ -24,3 +24,9 @@ Martin felt like a vehicle that needs to be driven by the plot. I can't imagine 
 A great deal of the tech stuff was pure nonsense, even from the magical point of view of the file. I am not going to make a big deal out of it though, as this is really a fantasy magic novel with a technology plating. 
 
 tldr; Read "Ready Player One" instead.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/off-to-be-the-wizard.jpg"/>
+</div>
+</div>

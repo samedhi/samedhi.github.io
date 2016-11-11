@@ -17,3 +17,10 @@ Bovine. This struck me as somewhat odd. Foremost, he liked big girls, what is th
 
 ### Plebeian taste
 Hell, I liked most of what I saw. The art makes you feel good. It is relaxing. It reminds you how attractive the female form is and makes you want to go lay in a sunny field. What is not to like about that?
+
+
+<div class="videos">
+<div class="video">
+<img src="/assets/renoir-revered-and-reviled.jpg"/>
+</div>
+</div>

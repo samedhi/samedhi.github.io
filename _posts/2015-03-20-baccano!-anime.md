@@ -21,3 +21,9 @@ I have a few recomendations.
 5. Might consider reading the novels beforehand. I have not, but I felt I might enjoy the series more had I done so.
 6. I watched the sub (arrogant purist that I am), but evidently the English dub is actually quite good. Might be worth giving it a shot.
 7. Finally, I watched this series over maybe 10 days, watching an episode or two a day. I would instead recommend watching this over a weekend. There are a lot of characters and interactions all over the place. It can be easier to remember who was what if it is all "fresh" in your head.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/baccano.jpg"/>
+</div>
+</div>

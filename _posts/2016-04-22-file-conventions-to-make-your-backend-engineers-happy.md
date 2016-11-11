@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: []
+categories: [code]
 ---
 
 A random list of file conventions that make me happy. Although these do not apply to every situation, they are true enough that you should at least consider them when creating an output file format.

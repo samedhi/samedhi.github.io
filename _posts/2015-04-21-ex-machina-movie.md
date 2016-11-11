@@ -19,3 +19,9 @@ In Caleb's defense, this was a pretty smart machine. That is the real danger. Cu
 Deception, as practice by Ava, requires intelligence.  When machines are smart enough to know how to act in order to be perceived as human, then we have a genuine threat to our species. I say threat because these machines would be smart enough to act human when they want to, but quit acting whenever it suits them. Most human societies and social structures depend on the shared underlying genetics of group and interpersonal relationships. Machines will have none of that built in. What is intrinsic to us is just a 0/1 switch to them.
 
 I just want to close by saying that I am not suggesting that machines can't be sentient, that they don't have any feelings (they may or they may not), or that they must be immoral/amoral. Simply stating that just because something has the ability to mimic human emotion does not mean that it actually experiences them. I feel that this is something that humanity may have trouble with in the future. Don't attribute human characteristics to something that is not human.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/ex-machina.jpg"/>
+</div>
+</div>

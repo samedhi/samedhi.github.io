@@ -21,3 +21,9 @@ As I said in the beginning, I think every man can get excited at least one time 
 And then Kill la Kill comes along. Kill la Kill repackages the excitement you experienced with your first tournament series. Tongue firmly in cheek, it turns the dial on this genres attribute to 11. Clearly aware of the ludicrousness and naive simplicity of its inspirational material, it pokes fun at it every chance it gets. To my mind, Kill la Kill would actually make less sense if you have not seen a tournament fighting anime before. It's plot is ridiculous, it just roles with it. Overly talkative characters, other characters comment on monologuing. It pushes the boundaries but never actually breaks the fourth wall. Even the fan service is done in a way that pokes fun at the obsessive amount of fan service in anime, while embracing it completely.
 
 Simply put, this is a great anime to watch after you have already experienced on genuine "tournament" anime series. It deconstructs everything that you though was so honest and important in these original series, but does so with such good nature and humor that you don't actually mind.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/kill-la-kill.jpg"/>
+</div>
+</div>

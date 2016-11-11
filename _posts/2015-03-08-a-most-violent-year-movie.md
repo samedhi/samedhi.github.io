@@ -12,3 +12,9 @@ The climax of having Elyes Gabel shoot himself was not much of a climax. The rea
 I think the scene I liked the most was the one of Elyes running down the bridge tower stairs. It filled me with a real sense of dread. As he heaved and lumbered down the stairs, letting momentum carry him more than self force, it was like watching a frightened animal work itself deeper into a trap. I kept thinking that someone was going to be waiting on the next flight. Tense, well done scene.
 
 I like the fact that Abel Malores was only able to be as clean as he was because everyone around him was so crooked. I appreciated the fact that he was faced with a fairly clear dilemma at the end. Either take the money from Peter Forente and be in bed with the mob (and all that entails). Or use his own ill gotten money to fund the legitimate business activity he was interested in engaging in. Either way, by his own means or someone else, he is still engaged in a criminal enterprise. Kind of like the universe is sending you a message there.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/a-most-violent-year-poster.jpg"/>
+</div>
+</div>

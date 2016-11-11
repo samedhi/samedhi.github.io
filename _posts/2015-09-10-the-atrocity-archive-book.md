@@ -13,3 +13,9 @@ So the last part of this books waxes philosophical and otherwise about the natur
 If, however, you aren't sure, then I would recommend reading the second story "The Concrete Jungle" first. Did  you like that? Then you will probably like the first (and much longer story) "The Atrocity Archive". There, I made efficient use of your time.
 
 Personally, this really wasn't my thing. If felt too much like Star Trek dilithium-crystal-deus-ex-machina kind of mumbo jumbo to me. To be fair, I don't enjoy horror (maybe it is a lack of imagination), so I may have just been skimming when I was supposed to be enthralled.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/the-attrocity-archives.jpg"/>
+</div>
+</div>

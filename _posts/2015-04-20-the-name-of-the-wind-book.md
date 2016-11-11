@@ -57,3 +57,9 @@ GM: This is going nowhere… Ok, lets shelve the mental/skills stuff, lets talk 
 KVOTHE: I am the strongest. I am taller than almost anyone I meet. I have the highest dexterity and coordination possible. I have the endurance of a marathon runner. I am so attractive it hurts. My hands are strong and powerful. I would like you to mention that very often in this adventure, mention my strong hands over and over again, so the other players know just how strong I am. I have a gaze that can stop a man in his tracks. Also, never fail to mention my fair and beautiful skin. Don’t forget my piercing green eyes, which turn gold when I am passionate. My penis is so big that…
 
 GM: By the gods you are an ass.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/the-name-of-the-wind.jpg"/>
+</div>
+</div>

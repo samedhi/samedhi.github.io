@@ -19,3 +19,9 @@ The music was unremarkable. I wouldn't usually make a big deal out of this, but 
 I was also bothered that Cinderella didn't have much trouble sticking to her ideals. Where is the great triumph as she sticks to something against all odds? Where is the drama here?
 
 Finally, and this is my patriarchic nature shining through, I didn't like that she had no real effect on the Prince. I am kind of a sucker when a woman is a paragon of some sort of virtue, she meets a man who is perhaps struggling with said virtue, and she strengthens it by associating with him. It is cliched, but I like it. This didn't really have that. Maybe Prince's Father is a commandeering warlord. Prince's association with Cinderella teaches him to value Love and Kindness. Because of her he shows these attributes to the people he conquers; becoming a great King. I don't know, sounds stupid when I say it, but I might have fallen for it.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/cinderella.png"/>
+</div>
+</div>

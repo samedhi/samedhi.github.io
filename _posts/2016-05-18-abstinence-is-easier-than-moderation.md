@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [lifehacks]
+categories: [lifehacks, code]
 ---
 
 I don't own a television. That is no boast, it is a reflection of my poor taste.  I am the sort of person that will watch things because they are on. If I owned a television, I would likely spend my days going from Judge Judy to Jerry Springer and back.

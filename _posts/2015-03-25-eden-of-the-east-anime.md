@@ -34,3 +34,9 @@ World Computer was a dumb and almost unused concept? Why?
 So you have a sort of super AI Deux Ex Machina wish grantor.... Alright, I will let that slide. Goofy though.
 
 The reasoning for needing to clear his memory was pretty darn weak.
+
+<div class="videos">
+<div class="video">
+<img src="/assets/eden_of_the_east_466_1280.jpg"/>
+</div>
+</div>

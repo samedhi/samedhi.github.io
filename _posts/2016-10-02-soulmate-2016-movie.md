@@ -15,11 +15,11 @@ I have no real idea whether it succeeds at capturing "contemporary, urban China"
 
 ### Review
 
-Soulmate is a Chinese movie that details the lifelong friendship of two women. The end. I liked it.
+Soulmate is a Chinese movie that details the lifelong friendship of two women. I liked it. The end. 
 
-It isn't about the velocity, it is the rate of change. It is the fact that the characters actually move and modify through time. I feel like modern cinema is so concerned with having "strong", "noble", everyman characters that we harden them to the point that they are as mechanical as the plot. I really appreciated the fact, over years, the two main characters diverge, mirror, and recombine in different ways. That is an ambitious thing to try to make a movie about; especially when you limit yourself to wo characters.
+It isn't the velocity, it is the rate of change. It is the fact that the characters actually move and modify through time. I feel like modern cinema is so concerned with having "strong", "noble", everyman characters that we harden them to the point that they are as mechanical as the plot. I really appreciated the fact that, over years, the two main characters diverge, mirror, and recombine in different ways. That is an ambitious thing to try to make a movie about; especially when you limit yourself to two characters.
 
-The camera work was also fresh. The shots were consistenly set up in interesting ways. People looking across each other in bed. Slow motion scenes to capture moments of youth (implying memory). There were a number of talking head scenes; however, I felt like I was often getting a sense of the room, of the space, even within those scenes. I lack the vocabulary to acurately describe what I was seeing, but I could feel it. Somebody really thought hard about how to set up scenes that fit the on screen action.
+The camera work was also fresh. The shots were consistenly set up in interesting ways. People looking across each other in bed. Slow motion scenes to capture moments of youth (implying memory). There were a number of talking head scenes. Even within those, I felt like I was often getting a sense of the room, of the space, within those scenes. I lack the vocabulary to acurately describe what I was seeing, but I could feel it. Somebody really thought hard about how to set up scenes that fit the on screen action.
 
 Reminded me a bit of [Our Little Sister](https://www.rottentomatoes.com/m/our_little_sister/), though more maudlin. I thought it was a great movie. It was interesting, I was engaged, and the acting was enchanting.
 
