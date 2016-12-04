@@ -7,7 +7,7 @@ categories: [code, musing]
 
 I have an addiction to infrastructure. While programing a solution, I eventually find that I am working on things that do not directly contribute to solving the problem. From a rational/detached/post-fact perspective, I know that this is a huge source of waste. Funny, I never seem to notice this at the time.
 
-# The Problem
+## The Problem
 
 I **do not** have a problem with motivation. If anything, I do not value my time as much as I should. Let us leave that for another rant. 
 
@@ -22,7 +22,7 @@ I **do** spend mental focus on vanity features that I hope to someday reveal to 
 Meanwhile, the actual business problem sits untouched.
 
 
-# Observations
+## Observations
 
 Speed is king. I am beginning to believe that this may be true of most things in life. I think the shortest way to get good at something is to become skilled enough to do it quickly. This seems to be true for artist and craftmen, so why shouldn't it be true for programmers?
 
@@ -43,7 +43,7 @@ A measure of the number of task you can perform per unit time. This mostly has t
 
 Programmers may relate to this through the notion of Flow. When you don't have to stop and question how to do something, but can focus simply on what you are doing. This makes you faster as well as less succeptible to distraction.
 
-# Solution
+## Solution
 
 Simple. Don't work on the big until you can quickly do the small. That is all I got.
 
@@ -56,10 +56,10 @@ Simple. Don't work on the big until you can quickly do the small. That is all I 
 5. Pick the next Project. If the last 3 consecutive projects with &#x2713; next to them are of the same difficulty, feel free to move to a higher difficulty project. Loop back to step 1.
 
 
-## Speed
+### Speed
 I think it is pretty natural to pick similar projects. Especially if you are trying to get "faster". This should really allow you to focus on increasing speed (specifically through Actions Per Minute).
 
-## Scratching that infrastructure itch
+### Scratching that Infrastructure Itch
 Step 3 & 4 are designed to allow you to address persistent difficulties in code by writting infrastructure. This is very different than my current method of writting infrastructure though as:
 
 1. These are problems that actually came up in the project (no guesswork here).
@@ -68,5 +68,5 @@ Step 3 & 4 are designed to allow you to address persistent difficulties in code 
 4. I am stopping infrastructure work if it exceeds its allocated time. Distance lets me become more level headed about whether it is a worthwhile investments. I can choose to resume after another project, but I may decide they it was a false paths. The forced break gives me time for reflection.
 5. Note that at most you are spending 50% of your time on infrastructure. I don't know what the right number for that would be, but it is certainly better than I have done on personal projects in the past.
 
-## Confidence
+### Confidence
 Although not mentioned until here. I think that being able to do something quickly and well dramatically increases confidence. Computers don't care about confidence, but humans do. If you are reading this you are likely human and as such should look after your mental well being. Being confident in a skill you have could open a lot of doors...
