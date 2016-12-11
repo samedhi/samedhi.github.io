@@ -9,15 +9,15 @@ I have an addiction to infrastructure. While programing a solution, I eventually
 
 ## The Problem
 
-I **do not** have a problem with motivation. If anything, I do not value my time as much as I should. Let us leave that for another rant. 
+I **do not** have a problem with motivation. If anything, I do not value my time as much as I should. Let us leave that for another rant.
 
 I **do not** have a problem with my programming skill set. It isn't lack of skill that impedes my ability to deliver. Not to say that I have nothing that needs improvement. My mathematics is weak, I never really got SQL, my Git skill are passable but nothing extroardinary, I am average at using the terminal, I type poorly, etc... There are a huge number of things I could learn and improve on, but non of those things stop me from being able to build solutions.
 
-I **do** spend an embarassing amount of time trying to get things perfect. 
+I **do** spend an embarassing amount of time trying to get things perfect.
 
-I **do** spend far too much energy trying to deal with eventualities that never emerge. 
+I **do** spend far too much energy trying to deal with eventualities that never emerge.
 
-I **do** spend mental focus on vanity features that I hope to someday reveal to the world, blinding it with my genius. 
+I **do** spend mental focus on vanity features that I hope to someday reveal to the world, blinding it with my genius.
 
 Meanwhile, the actual business problem sits untouched.
 
@@ -57,7 +57,7 @@ Simple. Don't work on the big until you can quickly do the small. That is all I 
 
 
 ### Speed
-I think it is pretty natural to pick similar projects. Especially if you are trying to get "faster". This should really allow you to focus on increasing speed (specifically through Actions Per Minute).
+I think it is pretty natural to pick similar projects. Especially if you are trying to get "faster". This should allow you to focus on increasing speed (specifically through Actions Per Minute).
 
 ### Scratching that Infrastructure Itch
 Step 3 & 4 are designed to allow you to address persistent difficulties in code by writting infrastructure. This is very different than my current method of writting infrastructure though as:
@@ -69,4 +69,4 @@ Step 3 & 4 are designed to allow you to address persistent difficulties in code 
 5. Note that at most you are spending 50% of your time on infrastructure. I don't know what the right number for that would be, but it is certainly better than I have done on personal projects in the past.
 
 ### Confidence
-Although not mentioned until here. I think that being able to do something quickly and well dramatically increases confidence. Computers don't care about confidence, but humans do. If you are reading this you are likely human and as such should look after your mental well being. Being confident in a skill you have could open a lot of doors...
+Being able to do something quickly and well increases confidence. Computers don't care about confidence, but humans do. If you are reading this, you are likely human. As a human you should look after your mental well being. Being confident in a skill could open a lot of doors...
