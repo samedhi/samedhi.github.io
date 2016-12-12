@@ -5,9 +5,7 @@ categories: [code]
 
 # Get a Vault Token to your Application
 
-## What is the Problem?
-
-Your application needs a `TOKEN` in order to access your [Vault](https://www.hashicorp.com/blog/vault.html) server. How do you get the `TOKEN` to the application server? This document addresses that.
+Your application needs a `TOKEN` in order to access your [Vault](https://www.hashicorp.com/blog/vault.html) server. How do you get the `TOKEN` to the application server?
 
 ## Some Background
 
