@@ -16,7 +16,7 @@ This week I wrote an addition to
 
 Although datastore is perfect as a Key/Value store that allows transactions, it does have its limitations.
 
-1. It does not allow SCANS
+1. It does not allow SCAN
 2. It does not allow JOIN
 
 One effect of these limits is that it can difficult to do things like aggregation on tables. You should use the proper tool for the desired outcome.
