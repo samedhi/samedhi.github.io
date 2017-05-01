@@ -69,6 +69,6 @@ If you are going to have a system that is going to audit the world, then you mus
 
 <div class="videos">
 <div class="video">
-<img src="/assets/The_circle_(2017_film).png"/>
+<img src="/assets/The_Circle_(2017_film).png"/>
 </div>
 </div>
