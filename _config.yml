@@ -15,8 +15,9 @@ stackoverflow_username: stephen-cagle
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-feed
+  - jekyll-srcset
 
 kramdown:
   input: GFM

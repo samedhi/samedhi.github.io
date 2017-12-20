@@ -15,6 +15,6 @@ I like the fact that Abel Malores was only able to be as clean as he was because
 
 <div class="videos">
 <div class="video">
-<img src="/assets/a-most-violent-year-poster.jpg"/>
+{% image_tag src="/assets/a-most-violent-year-poster.jpg" width="800"%}
 </div>
 </div>

@@ -12,6 +12,6 @@ A good sub movie should leave you with a tense neck and shoulders. It is about j
 
 <div class="videos">
 <div class="video">
-<img src="/assets/black-sea-poster.jpg"/>
+{% image_tag src="/assets/black-sea-poster.jpg" width="800"%}
 </div>
 </div>
