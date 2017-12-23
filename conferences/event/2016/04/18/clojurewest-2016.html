@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Clojure / West 2016</title>
+  <meta name="description" content="A recording of all that I saw and hear at Clojure West 2016 in Seattle Washington.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://samedhi.github.io/conferences/event/2016/04/18/clojurewest-2016.html">
+  <link rel="alternate" type="application/rss+xml" title="Unstructured" href="http://samedhi.github.io/feed.xml" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="http://app.klipse.tech/css/codemirror.css">
+  <link type="application/atom+xml" rel="alternate" href="http://samedhi.github.io/feed.xml" title="Unstructured" />
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91652505-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Unstructured</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <script>document.write('<script src="http://localhost:35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Clojure / West 2016</h1>
+    <p class="post-meta">Apr 18, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>A recording of all that I saw and hear at Clojure West 2016 in Seattle Washington.</p>
+
+<h2 id="nathan-marz-specter">Nathan Marz Specter</h2>
+
+<p><a href="https://github.com/nathanmarz/specter">Github</a></p>
+
+<ol>
+  <li>Navigation is independent abstraction</li>
+  <li>Navigation dissasociated from the desired transformation</li>
+  <li>Provides type defined defaults for navigation to nil</li>
+  <li>Assuming you can write a generic enough function</li>
+</ol>
+
+<p>This library lets you navigate and modify deeply nested and deeply repetitive data structures. Fundamently, it raises the barrier before you need to start putting things in a database by making it possible to just reason about data when the data is very deep or very broad. It makes the actionable code look like a DSL in its conciseness; without actually being a DSL. Having said that, it is bringing in a rather large “mini DSL” in order to allow for the data manipulation.</p>
+
+<h2 id="donevan-dolby">Donevan Dolby</h2>
+
+<p>This was a walkthrough of a 16,000 line of code Clojure App. Lessons were learned, libraries were used, and discarded. Code is being used on the Boeing 737 MAX; which is evidently a new plane with a focus on efficiency.</p>
+
+<h2 id="claire-alvis">Claire Alvis</h2>
+<p>https://github.com/SparkFund/spec-tacular</p>
+
+<p>An attempt at putting some sort of stronger typing on entities in Datomic. Graded various aspects of her attempt. Did not entirely follow due to lack of familiarity with Typed systems in particular.</p>
+
+<ol>
+  <li>Adds types in to Datomic by having a spectacular shema -&gt; becomes datomic schema</li>
+  <li>Verification of code</li>
+  <li>Documentation is specified by the spec</li>
+</ol>
+
+<h2 id="michał-marczyk">Michał Marczyk</h2>
+
+<p>This was just a deep dive into exactly what a record is and when it is appropriate to use one. A record is just a collection of fields, possibly of different data types, typicially with a fixed number and sequences.</p>
+
+<h4 id="records-also-takes-types-into-account-equals-and-hashcode">Records also takes types into account (.equals and .hashCode)</h4>
+
+<p>Big exception is that <code class="highlighter-rouge">=</code> and <code class="highlighter-rouge">.equals</code> are NOT the same when comparing Record to a map even with the same value.</p>
+
+<h4 id="dissoc-a-key-from-a-record-returns-a-map">dissoc a key from a Record returns a Map</h4>
+
+<p>It can be a bit surprising to see this. Unfortunately, they often still look like records. In fact, this is one of the reason record? exist.</p>
+
+<h4 id="reasons-you-might-use-records">Reasons you might use records</h4>
+
+<ol>
+  <li>Clear data semantics (you are naming things) (clara-rules)</li>
+  <li>computed properties (midpoint of a circle, IShape, Circle, Rectangle)) (core.async)</li>
+  <li>polymorphic ‘actions’  (Stuart Sierra’s component)</li>
+  <li>A clean simple way to create a named class implementating a interface</li>
+  <li>(defrecord ForJava […]
+:load-ns true
+…)</li>
+</ol>
+
+<h2 id="mario-aquino">Mario Aquino</h2>
+
+<p>Showcased an API for interaction to the Alexa Skill system from the Clojure API. It is called Boomhauer, from the king of the hill character. <a href="https://github.com/TheClimateCorporation/boomhauer">GITHUB</a></p>
+
+<ol>
+  <li>Interactions can be single exchange or can be stateful</li>
+  <li>Alexa has two concepts Intent and slots
+    <ul>
+      <li>Intent - What you want to do GETHOROSCOPE</li>
+      <li>Slots - The “arguments” passed to a</li>
+    </ul>
+  </li>
+  <li>Uterances - How you might express the things you are interested in eg.</li>
+  <li>There is a local development that you can do</li>
+  <li>Mobile could provide a great way to make Alexa a real success.</li>
+  <li>There are libraries that generate all the uterances you want from a grammar.</li>
+  <li>There is a Certification process. Got to get approved like Mac Application.</li>
+</ol>
+
+<p>This might be good for the sales reps. I mean, they are already wearing a headset, it would be cool if they could do things like take voice notes and make calls and all that stuff without even having to touch the screen.</p>
+
+<h2 id="michael-drogalis">Michael Drogalis</h2>
+<ol>
+  <li>“Peerless” in the sense that peers open direct line of communication between each other</li>
+  <li>Zookeeper for keeping track of the entry’s that have been added</li>
+</ol>
+
+<p>I have no use for this, thought it was neat. It is basically a system for doing distributed computation in a peerless system.</p>
+
+<h2 id="jack-dubie">Jack Dubie</h2>
+<h4 id="hiearchy-of-testing---decoupled-end-to-end-lightweight-simple">Hiearchy of testing - [Decoupled, End to End, Lightweight, Simple]</h4>
+
+<ol>
+  <li>Unit Test</li>
+  <li>API Test</li>
+  <li>UI Test (Selenium) - Just test what is supposed to happen</li>
+</ol>
+
+<h4 id="how-do-you-test-that-something-was-done-without-actually-tying-to-a-particular-db">How do you test that something was done without actually tying to a particular db?</h4>
+<p>Refresh the page after performing an action, you should have the same state as you had when you finished. Without tying to a particular thing you have proven that it has been persisted.</p>
+
+<h2 id="stuart-sierra">Stuart Sierra</h2>
+
+<ol>
+  <li>Removing a method definition does not remove it from the ns</li>
+  <li>Macros if changed will not cause things using the macro to be re-evaluated</li>
+  <li>Protocols don’t reload because Java Classes are Immutable</li>
+</ol>
+
+<h4 id="assumptions">Assumptions</h4>
+<ol>
+  <li>1 file = 1 ns</li>
+  <li>No circular dependencies</li>
+  <li>No loading code outside of ns</li>
+  <li>No fully qualified ns in variables, you must require everything</li>
+</ol>
+
+<h4 id="dealing-with-application-state">Dealing with Application state</h4>
+<ul>
+  <li><a href="https://github.com/stuartsierra/reloaded">RELOADED</a></li>
+  <li><a href="https://github.com/stuartsierra/component">COMPONENT</a></li>
+  <li><a href="https://github.com/clojure/tools.namespace">TOOLS.NAMESPACE</a></li>
+</ul>
+
+<h4 id="you-can-have-multiple-systems-that-are-seperate-systems-in-development-and-production">You can have multiple systems that are seperate “systems” in development and production</h4>
+<p>When you need development, just merge all the systems into one map</p>
+
+<p>tldr; Source Code != Program</p>
+
+<h1 id="tony-kay">Tony Kay</h1>
+<p><a href="http://untangled-web.github.io/untangled/">UNTANGLED</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CoMyszwN50g" frameborder="0" allowfullscreen=""></iframe>
+
+<p>Honestly, it looks rather complex to me. I do not convinved these new models based on Falcor are actually superior.</p>
+
+<h1 id="bozhidar-cider">Bozhidar (Cider)</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>l - can be used to show a list of the locals
+o - takes you out of the current debugger
+s - stacktraces
+which-key package -
+http://cider.readthedocs.org/en/latest/
+there is a really good story in terms of being able to trace recursive functions
+enlighten mode basically enables lightable in emacs
+cider-scratchpad is usual for prototyping ideas
+C-c C-e for normal evaluation
+C-j to print out the result
+cider-inspect lets you look at complex data
+cider-docs - to see docs
+cider-grimoir - to see examples
+cider-apropo - match all symbols related to the word you name
+Projectile installed allows you to toggle between implementation and test
+</code></pre></div></div>
+
+<h3 id="questions">Questions</h3>
+
+<h4 id="can-you-instrument-the-debugger-from-api">Can you instrument the debugger from API?</h4>
+<p>Yes.</p>
+
+<h3 id="can-you-debug-clojurescript">Can you debug Clojurescript?</h3>
+<p>No.</p>
+
+<h2 id="zach-tellman-clojure-applied">Zach Tellman (Clojure Applied)</h2>
+
+<ul>
+  <li>The extra verbosity of using standard functions rather than …</li>
+  <li>Always be composing - https://www.youtube.com/watch?v=3oQTSP4FngY</li>
+  <li>Dynamic Variables for Datastore &amp; TaskQueue</li>
+  <li>with-redefs might be better? Not sure.</li>
+  <li>Most of the time you want to be verbose rather than cryptic.</li>
+  <li>It is better to duplicate code than to have the wrong abstraction</li>
+</ul>
+
+<h2 id="arachne"><a href="http://arachne-framework.org">Arachne</a></h2>
+
+<p>Some modular web framework that is going to normalize how people do web programming.</p>
+
+<h2 id="mikaela-patella">Mikaela Patella</h2>
+
+<ul>
+  <li>Web Developer -&gt; Distributed Systems Engineers</li>
+  <li>The clients and the servers are all segments of a distributed system.</li>
+  <li>The “server” is an abstraction over the entire backend, a consistent snapshot of an uncertain distributed system</li>
+  <li>Big idea is that “Frontend” and “Backend” are relics of the past (We are really just distributed systems.)</li>
+</ul>
+
+<h4 id="think-of-as-games">Think of as games….</h4>
+<p>What if we thought of it less as “request/response” (webdev) programming and more as a game? Where we have to do local level rendering of a segment of the entire world.</p>
+
+<h2 id="priyatam-mudivarti">Priyatam Mudivarti</h2>
+<ul>
+  <li>Invalidation - How do you inform other users that the current information is no longer valid</li>
+  <li>Eviction - How long do I exist?</li>
+  <li>Naming - What is th ename of the cache</li>
+  <li>{cache-name}-{uid}-{cache-version}-{logical-timestamp}</li>
+  <li>In order to properly invalidate things, include a timestamp</li>
+</ul>
+
+<p>So, for good caching, also include a timestamp as part of the UUID, this way you don’t have to revert data, instead you can just increment the timestamp and this will mean the cache is no longer used. Thi smight actually apply to Elasticsearch for my own uses.</p>
+
+<h2 id="alex-kehayias-chocolatier"><a href="https://github.com/alexkehayias/chocolatier">Alex Kehayias (Chocolatier)</a></h2>
+
+<h4 id="problem-with-conventional-game-engines-is">Problem with conventional game engines is</h4>
+<ol>
+  <li>you intermingle state and behavior</li>
+  <li>Not declarative</li>
+  <li>No Interactive development</li>
+</ol>
+
+<h4 id="entity-component-system">Entity Component system</h4>
+<ul>
+  <li>Dungeon Siege &amp; Unit Game Engine</li>
+  <li>Basically, it is a map of components (interfaces) that it supports</li>
+  <li>Devcards - This guy had a good experience with devcards.</li>
+</ul>
+
+<h4 id="performance">Performance</h4>
+<ul>
+  <li>Variadic function scannot be optimized (use multiple arities instead)</li>
+  <li>apply has a real cost (it can not be optimized)</li>
+  <li>keyword-equal? is much faster</li>
+  <li>defmulti is slow, detype, defrecord, defprotocol is fast</li>
+  <li>AVOID INTERMEDIATE COLLECTIONS</li>
+  <li>If you now it is a boolean, skip test use ^boolean</li>
+</ul>
+
+<p>Some great Resources at the end</p>
+
+<h2 id="matthias-felleisen">Matthias Felleisen</h2>
+<ul>
+  <li>All types think types while they create code</li>
+  <li>In some programs, we can check programs at compilation time</li>
+  <li>He is against Type Inference.</li>
+  <li>Hindley-Milner type inference (Ml, Haskell)</li>
+</ul>
+
+<p>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.</p>
+
+<h2 id="personal">Personal</h2>
+
+<p>Good conference. Met a number of people that we can bring in to work if we need their skills. Learned about new technologies in the Clojure community. Specifically, I think the Alexa system might be something we should look into for Reps. Specter might be good for keeping our system as Data and not needing to put everything in a database. The Data science team might like that; of course, it would involve learning clojure. I think that would be a win win for everyone. :]</p>
+
+  </article>
+
+  <div id="disqus_thread"></div>
+  <script>
+
+  var disqus_config = function () {
+    this.page.identifier = "/conferences/event/2016/04/18/clojurewest-2016.html";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//samedhi.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+    <!-- CONFIGURE KLIPSE -->
+    <script>
+     window.klipse_settings = {
+         selector: '.language-klipse', // css selector for the html elements you want to klipsify
+     };
+    </script>
+    <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+
+    <h2 class="footer-heading">Unstructured</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Unstructured</li>
+          <li><a href="mailto:samedhi@gmail.com">samedhi@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/samedhi">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">samedhi</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/samedhi">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">samedhi</span>
+            </a>
+          </li>
+	  
+
+	  
+          <li>
+	    <a href="http://stackoverflow.com/users/21317/stephen-cagle?tab=profile">
+	      <span class="icon  icon--twitter">
+		<img src="/assets/stackoverflow.svg" width="16px" height="16px"/>
+              </span>
+	      <span class="username">stephen-cagle</span>
+            </a>
+          </li>
+          
+	</ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">A journal of what I am working on and thinking about. I provide here links to every project I work upon. I also periodically review things, and sometimes, if you are good, give my opinion. 
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
