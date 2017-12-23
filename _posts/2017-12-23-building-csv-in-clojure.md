@@ -1,20 +1,12 @@
 ---
 layout: post
-title:  Build a csv in clojure
+title:  Build a CSV in Clojure
 categories: [code]
 ---
 
-<link rel="stylesheet" type="text/css" href="http://app.klipse.tech/css/codemirror.css">
+Converting a vector of values to a CSV in pure clojure. Not actually that interesting, just wanted the chance to try out [klipse](https://github.com/viebel/klipse).
 
-<script>
-    window.klipse_settings = {
-        selector: '.language-klipse'// css selector for the html elements you want to klipsify
-    };
-</script>
-<script src="http://app.klipse.tech/plugin/js/klipse_plugin.js"></script>
-
-<pre><code class="language-klipse">
-(ns csv-example
+<pre><code class="language-klipse">(ns csv-example.core
   (:require 
     [clojure.string :as string]))
 
