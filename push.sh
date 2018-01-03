@@ -1,6 +1,7 @@
 #!/bin/bash
 
 b=$(git branch | grep -e "^*" | cut -d' ' -f 2)
-git checkout master
 jekyll build
+rm push.sh
+git checkout master
 cp -r _site/* .
