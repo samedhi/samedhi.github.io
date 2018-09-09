@@ -6,9 +6,68 @@
 </description>
     <link>http://samedhi.github.io/</link>
     <atom:link href="http://samedhi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 May 2018 18:37:23 -0700</pubDate>
-    <lastBuildDate>Sun, 13 May 2018 18:37:23 -0700</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
+    <pubDate>Sun, 09 Sep 2018 15:24:34 -0700</pubDate>
+    <lastBuildDate>Sun, 09 Sep 2018 15:24:34 -0700</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Clojure Macro for running clojure.spec as a test</title>
+        <description>&lt;p&gt;Wrote a small macro to test any &lt;code class=&quot;highlighter-rouge&quot;&gt;clojure.spec.test.alpha/fdef&lt;/code&gt;. Having some trouble figuring out how to get this working with Klipse. Any help is appreciated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-klipse&quot;&gt;
+
+(ns example.test-utils
+  (:require
+   [clojure.spec.test.alpha :as spec.test]
+   [cljs.test :as test :include-macros true]))
+
+(defmacro deftest-fdef [sym]
+  `(test/deftest ~(-&amp;gt; sym name (str &quot;-test&quot;) symbol)
+     (let [[res#] (spec.test/check (quote ~sym))
+           {{result# :result :as ret#} :clojure.spec.test.check/ret} res#]
+       (-&amp;gt; ret#
+           clojure.pprint/pprint
+           println)
+      (test/is (true? result#)))))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-klipse&quot;&gt;
+(ns inferno.poker.hands
+  (:refer-clojure :exclude [flush])
+  (:require
+   [clojure.spec.alpha :as spec]
+   [clojure.spec.gen.alpha :as gen]
+   [example.test-utils :as cards]))-
+
+(defn rank [[i _]] i)
+
+(defn suit [[_ k]] k)
+
+(defn partition-by-rank [cards]
+  (partition-by rank cards))
+
+(spec/fdef partition-by-rank
+  :args (spec/cat :cards ::cards/subdeck)
+  :ret (spec/coll-of ::cards/subdeck))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-klipse&quot;&gt;
+(ns inferno.poker.hands-test
+  (:require
+   [inferno.test-utils :as test-utils :require-macros true))
+
+(deftest-fdef inferno.poker.hands/partition-by-rank)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Sat, 08 Sep 2018 00:00:00 -0700</pubDate>
+        <link>http://samedhi.github.io/code/2018/09/08/clojure-macro-for-running-clojure-spec-test.html</link>
+        <guid isPermaLink="true">http://samedhi.github.io/code/2018/09/08/clojure-macro-for-running-clojure-spec-test.html</guid>
+        
+        
+        <category>code</category>
+        
+      </item>
     
       <item>
         <title>Build a CSV in Clojure</title>
@@ -603,54 +662,6 @@ scan('Dog', &quot;/add/pedigree&quot;)
         <pubDate>Sun, 15 Jan 2017 00:00:00 -0800</pubDate>
         <link>http://samedhi.github.io/code/2017/01/15/soft-scan-on-google-app-engine.html</link>
         <guid isPermaLink="true">http://samedhi.github.io/code/2017/01/15/soft-scan-on-google-app-engine.html</guid>
-        
-        
-        <category>code</category>
-        
-      </item>
-    
-      <item>
-        <title>Convert Datastore Into Elasticsearch</title>
-        <description>&lt;p&gt;This week I wrote an addition to
-&lt;a href=&quot;https://github.com/samedhi/gaend&quot;&gt;gaend&lt;/a&gt; that automatically causes every &lt;code class=&quot;highlighter-rouge&quot;&gt;ndb.Model&lt;/code&gt; entity to automagically be persisted to &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;why&quot;&gt;Why?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/datastore/docs/concepts/overview&quot;&gt;Datastore&lt;/a&gt; (the database technology that powers Google App Engine) has a number of great features.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;It scales to like forever&lt;/li&gt;
-  &lt;li&gt;With GAE, you can do complex validation on every write&lt;/li&gt;
-  &lt;li&gt;Automatically applied security, upgrades, scaling, partitioning, etc.&lt;/li&gt;
-  &lt;li&gt;It is pretty simple&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Although datastore is perfect as a Key/Value store that allows transactions and limited queries, it does have its limitations.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;It does not allow SCAN&lt;/li&gt;
-  &lt;li&gt;It does not allow JOIN&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;One effect of these limits is that it can difficult to do things like aggregation on tables. You should use the proper tool for the desired outcome.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Datastore is great as a key/value store (with transactions).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Elasticsearch is great at doing aggregation.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Datastore is structured (typed) data. Everything that goes into Elasticsearch must be JSON data. Structured data can be fairly easily transformed into JSON data. You see where I am going with this?&lt;/p&gt;
-
-&lt;h2 id=&quot;nuance&quot;&gt;Nuance&lt;/h2&gt;
-
-&lt;p&gt;This extension to &lt;a href=&quot;https://github.com/samedhi/gaend&quot;&gt;gaend&lt;/a&gt; does successfully convert any Datastore data into Elasticsearch. You should look at your table in Datastore and perhaps consider whether you need to submit a custom &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html&quot;&gt;mapping&lt;/a&gt; for Elasticsearch. If unspecified, Elasticsearch will generate a mapping for you based on the submitted JSON document. For tables made up of “primitive” data, the dynamically generated mapping is usually sufficient. Still, know that you can override the dynamic in the event that you have complex, deeply nested, or large types of data.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Jan 2017 00:00:00 -0800</pubDate>
-        <link>http://samedhi.github.io/code/2017/01/08/convert-datastore-into-elasticsearch.html</link>
-        <guid isPermaLink="true">http://samedhi.github.io/code/2017/01/08/convert-datastore-into-elasticsearch.html</guid>
         
         
         <category>code</category>
