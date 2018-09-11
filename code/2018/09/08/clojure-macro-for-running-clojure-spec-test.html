@@ -115,8 +115,8 @@
 
 <pre><code class="language-klipse">
 (ns example.silly-test
-  (:require
-   [inferno.test-utils :as test-utils :require-macros true))
+  (:require-macros
+   [inferno.test-utils :refer [deftest-fdef]]))
 
 (deftest-fdef example.silly/adder)
 </code></pre>

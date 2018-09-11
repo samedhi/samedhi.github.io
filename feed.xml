@@ -6,8 +6,8 @@
 </description>
     <link>http://samedhi.github.io/</link>
     <atom:link href="http://samedhi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Sep 2018 20:44:57 -0700</pubDate>
-    <lastBuildDate>Mon, 10 Sep 2018 20:44:57 -0700</lastBuildDate>
+    <pubDate>Mon, 10 Sep 2018 21:03:45 -0700</pubDate>
+    <lastBuildDate>Mon, 10 Sep 2018 21:03:45 -0700</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -49,8 +49,8 @@
 
 &lt;pre&gt;&lt;code class=&quot;language-klipse&quot;&gt;
 (ns example.silly-test
-  (:require
-   [inferno.test-utils :as test-utils :require-macros true))
+  (:require-macros
+   [inferno.test-utils :refer [deftest-fdef]]))
 
 (deftest-fdef example.silly/adder)
 &lt;/code&gt;&lt;/pre&gt;
