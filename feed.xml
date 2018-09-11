@@ -6,8 +6,8 @@
 </description>
     <link>http://samedhi.github.io/</link>
     <atom:link href="http://samedhi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Sep 2018 15:24:34 -0700</pubDate>
-    <lastBuildDate>Sun, 09 Sep 2018 15:24:34 -0700</lastBuildDate>
+    <pubDate>Mon, 10 Sep 2018 20:44:57 -0700</pubDate>
+    <lastBuildDate>Mon, 10 Sep 2018 20:44:57 -0700</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -33,31 +33,26 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-klipse&quot;&gt;
-(ns inferno.poker.hands
-  (:refer-clojure :exclude [flush])
+(ns example.silly
   (:require
-   [clojure.spec.alpha :as spec]
-   [clojure.spec.gen.alpha :as gen]
-   [example.test-utils :as cards]))-
+   [clojure.spec.alpha :as spec]))
 
-(defn rank [[i _]] i)
+(spec/def ::integer int?)
 
-(defn suit [[_ k]] k)
-
-(defn partition-by-rank [cards]
+(defn adder [a b]
   (partition-by rank cards))
 
-(spec/fdef partition-by-rank
-  :args (spec/cat :cards ::cards/subdeck)
-  :ret (spec/coll-of ::cards/subdeck))
+(spec/fdef adder
+  :args (spec/cat :a ::integer :b ::integer)
+  :ret ::integer)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-klipse&quot;&gt;
-(ns inferno.poker.hands-test
+(ns example.silly-test
   (:require
    [inferno.test-utils :as test-utils :require-macros true))
 
-(deftest-fdef inferno.poker.hands/partition-by-rank)
+(deftest-fdef example.silly/adder)
 &lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Sat, 08 Sep 2018 00:00:00 -0700</pubDate>

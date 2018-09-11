@@ -99,31 +99,26 @@
 </code></pre>
 
 <pre><code class="language-klipse">
-(ns inferno.poker.hands
-  (:refer-clojure :exclude [flush])
+(ns example.silly
   (:require
-   [clojure.spec.alpha :as spec]
-   [clojure.spec.gen.alpha :as gen]
-   [example.test-utils :as cards]))-
+   [clojure.spec.alpha :as spec]))
 
-(defn rank [[i _]] i)
+(spec/def ::integer int?)
 
-(defn suit [[_ k]] k)
-
-(defn partition-by-rank [cards]
+(defn adder [a b]
   (partition-by rank cards))
 
-(spec/fdef partition-by-rank
-  :args (spec/cat :cards ::cards/subdeck)
-  :ret (spec/coll-of ::cards/subdeck))
+(spec/fdef adder
+  :args (spec/cat :a ::integer :b ::integer)
+  :ret ::integer)
 </code></pre>
 
 <pre><code class="language-klipse">
-(ns inferno.poker.hands-test
+(ns example.silly-test
   (:require
    [inferno.test-utils :as test-utils :require-macros true))
 
-(deftest-fdef inferno.poker.hands/partition-by-rank)
+(deftest-fdef example.silly/adder)
 </code></pre>
 
   </article>
