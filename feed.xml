@@ -6,8 +6,8 @@
 </description>
     <link>http://samedhi.github.io/</link>
     <atom:link href="http://samedhi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Sep 2018 21:03:45 -0700</pubDate>
-    <lastBuildDate>Mon, 10 Sep 2018 21:03:45 -0700</lastBuildDate>
+    <pubDate>Mon, 10 Sep 2018 21:08:25 -0700</pubDate>
+    <lastBuildDate>Mon, 10 Sep 2018 21:08:25 -0700</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -40,7 +40,7 @@
 (spec/def ::integer int?)
 
 (defn adder [a b]
-  (partition-by rank cards))
+  (+ a b))
 
 (spec/fdef adder
   :args (spec/cat :a ::integer :b ::integer)

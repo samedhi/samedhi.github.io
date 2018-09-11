@@ -106,7 +106,7 @@
 (spec/def ::integer int?)
 
 (defn adder [a b]
-  (partition-by rank cards))
+  (+ a b))
 
 (spec/fdef adder
   :args (spec/cat :a ::integer :b ::integer)
