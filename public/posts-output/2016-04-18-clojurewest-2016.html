@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Unstructured: Clojure / West 2016</title>
+    <link rel="canonical" href="https://read-line.com/posts-output/2016-04-18-clojurewest-2016">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Unstructured</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages-output/about">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">April 18, 2016</div>
+        
+    </div>
+    <h2>Clojure / West 2016</h2>
+</div>
+<div>
+    
+    <p>A recording of all that I saw and hear at Clojure West 2016 in Seattle Washington.</p><h2 id="nathan&#95;marz&#95;specter">Nathan Marz Specter</h2><p><a href='https://github.com/nathanmarz/specter'>Github</a></p><ol><li>Navigation is independent abstraction</li><li>Navigation dissasociated from the desired transformation</li><li>Provides type defined defaults for navigation to nil</li><li>Assuming you can write a generic enough function</li></ol><p>This library lets you navigate and modify deeply nested and deeply repetitive data structures. Fundamently, it raises the barrier before you need to start putting things in a database by making it possible to just reason about data when the data is very deep or very broad. It makes the actionable code look like a DSL in its conciseness; without actually being a DSL. Having said that, it is bringing in a rather large "mini DSL" in order to allow for the data manipulation.</p><h2 id="donevan&#95;dolby">Donevan Dolby</h2><p>This was a walkthrough of a 16,000 line of code Clojure App. Lessons were learned, libraries were used, and discarded. Code is being used on the Boeing 737 MAX; which is evidently a new plane with a focus on efficiency.</p><h2 id="claire&#95;alvis">Claire Alvis</h2><p>https://github.com/SparkFund/spec-tacular</p><p>An attempt at putting some sort of stronger typing on entities in Datomic. Graded various aspects of her attempt. Did not entirely follow due to lack of familiarity with Typed systems in particular.</p><ol><li>Adds types in to Datomic by having a spectacular shema -> becomes datomic schema</li><li>Verification of code</li><li>Documentation is specified by the spec</li></ol><h2 id="michał&#95;marczyk">Michał Marczyk</h2><p>This was just a deep dive into exactly what a record is and when it is appropriate to use one. A record is just a collection of fields, possibly of different data types, typicially with a fixed number and sequences.</p><h4 id="records&#95;also&#95;takes&#95;types&#95;into&#95;account&#95;(.equals&#95;and&#95;.hashcode)">Records also takes types into account (.equals and .hashCode)</h4><p>Big exception is that <code>=</code> and <code>.equals</code> are NOT the same when comparing Record to a map even with the same value.</p><h4 id="dissoc&#95;a&#95;key&#95;from&#95;a&#95;record&#95;returns&#95;a&#95;map">dissoc a key from a Record returns a Map</h4><p>It can be a bit surprising to see this. Unfortunately, they often still look like records. In fact, this is one of the reason record? exist.</p><h4 id="reasons&#95;you&#95;might&#95;use&#95;records">Reasons you might use records</h4><ol><li>Clear data semantics (you are naming things) (clara-rules)</li><li>computed properties (midpoint of a circle, IShape, Circle, Rectangle)) (core.async)</li><li>polymorphic 'actions'  (Stuart Sierra's component)</li><li>A clean simple way to create a named class implementating a interface</li><li>(defrecord ForJava [...]:load-ns true...)</li></ol><h2 id="mario&#95;aquino">Mario Aquino</h2><p>Showcased an API for interaction to the Alexa Skill system from the Clojure API. It is called Boomhauer, from the king of the hill character. <a href='https://github.com/TheClimateCorporation/boomhauer'>GITHUB</a></p><ol><li>Interactions can be single exchange or can be stateful</li><li>Alexa has two concepts Intent and slots<ul><li>Intent - What you want to do GETHOROSCOPE</li><li>Slots - The "arguments" passed to a</li></ul></li><li>Uterances - How you might express the things you are interested in eg.</li><li>There is a local development that you can do</li><li>Mobile could provide a great way to make Alexa a real success.</li><li>There are libraries that generate all the uterances you want from a grammar.</li><li>There is a Certification process. Got to get approved like Mac Application.</li></ol><p>This might be good for the sales reps. I mean, they are already wearing a headset, it would be cool if they could do things like take voice notes and make calls and all that stuff without even having to touch the screen.</p><h2 id="michael&#95;drogalis">Michael Drogalis</h2><ol><li>"Peerless" in the sense that peers open direct line of communication between each other</li><li>Zookeeper for keeping track of the entry's that have been added</li></ol><p>I have no use for this, thought it was neat. It is basically a system for doing distributed computation in a peerless system.</p><h2 id="jack&#95;dubie">Jack Dubie</h2><h4 id="hiearchy&#95;of&#95;testing&#95;-&#95;[decoupled,&#95;end&#95;to&#95;end,&#95;lightweight,&#95;simple]">Hiearchy of testing - [Decoupled, End to End, Lightweight, Simple]</h4><ol><li>Unit Test</li><li>API Test</li><li>UI Test (Selenium) - Just test what is supposed to happen</li></ol><h4 id="how&#95;do&#95;you&#95;test&#95;that&#95;something&#95;was&#95;done&#95;without&#95;actually&#95;tying&#95;to&#95;a&#95;particular&#95;db?">How do you test that something was done without actually tying to a particular db?</h4><p>Refresh the page after performing an action, you should have the same state as you had when you finished. Without tying to a particular thing you have proven that it has been persisted.</p><h2 id="stuart&#95;sierra">Stuart Sierra</h2><ol><li>Removing a method definition does not remove it from the ns</li><li>Macros if changed will not cause things using the macro to be re-evaluated</li><li>Protocols don't reload because Java Classes are Immutable</li></ol><h4 id="assumptions">Assumptions</h4><ol><li>1 file = 1 ns</li><li>No circular dependencies</li><li>No loading code outside of ns</li><li>No fully qualified ns in variables, you must require everything</li></ol><h4 id="dealing&#95;with&#95;application&#95;state">Dealing with Application state</h4><ul><li><a href='https://github.com/stuartsierra/reloaded'>RELOADED</a></li><li><a href='https://github.com/stuartsierra/component'>COMPONENT</a></li><li><a href='https://github.com/clojure/tools.namespace'>TOOLS.NAMESPACE</a></li></ul><h4 id="you&#95;can&#95;have&#95;multiple&#95;systems&#95;that&#95;are&#95;seperate&#95;"systems"&#95;in&#95;development&#95;and&#95;production">You can have multiple systems that are seperate "systems" in development and production</h4><p>When you need development, just merge all the systems into one map</p><p>tldr; Source Code != Program</p><h1 id="tony&#95;kay">Tony Kay</h1><p><a href='http://untangled-web.github.io/untangled/'>UNTANGLED</a> <div class="center"> <iframe width="560" height="315" src="https://www.youtube.com/embed/CoMyszwN50g" frameborder="0" allowfullscreen></iframe> </div></p><p>Honestly, it looks rather complex to me. I do not convinved these new models based on Falcor are actually superior.</p><h1 id="bozhidar&#95;(cider)">Bozhidar (Cider)</h1><pre><code>l - can be used to show a list of the locals
+o - takes you out of the current debugger
+s - stacktraces
+which-key package -
+http://cider.readthedocs.org/en/latest/
+there is a really good story in terms of being able to trace recursive functions
+enlighten mode basically enables lightable in emacs
+cider-scratchpad is usual for prototyping ideas
+C-c C-e for normal evaluation
+C-j to print out the result
+cider-inspect lets you look at complex data
+cider-docs - to see docs
+cider-grimoir - to see examples
+cider-apropo - match all symbols related to the word you name
+Projectile installed allows you to toggle between implementation and test
+</code></pre><h3 id="questions">Questions</h3><h4 id="can&#95;you&#95;instrument&#95;the&#95;debugger&#95;from&#95;api?">Can you instrument the debugger from API?</h4><p>Yes.</p><h3 id="can&#95;you&#95;debug&#95;clojurescript?">Can you debug Clojurescript?</h3><p>No.</p><h2 id="zach&#95;tellman&#95;(clojure&#95;applied)">Zach Tellman (Clojure Applied)</h2><ul><li>The extra verbosity of using standard functions rather than ...</li><li>Always be composing - https://www.youtube.com/watch?v=3oQTSP4FngY</li><li>Dynamic Variables for Datastore & TaskQueue</li><li>with-redefs might be better? Not sure.</li><li>Most of the time you want to be verbose rather than cryptic.</li><li>It is better to duplicate code than to have the wrong abstraction</li></ul><h2 id="<a href='http://arachne-framework.org'>Arachne</a>"><a href='http://arachne-framework.org'>Arachne</a></h2><p>Some modular web framework that is going to normalize how people do web programming.</p><h2 id="mikaela&#95;patella">Mikaela Patella</h2><ul><li>Web Developer -> Distributed Systems Engineers</li><li>The clients and the servers are all segments of a distributed system.</li><li>The "server" is an abstraction over the entire backend, a consistent snapshot of an uncertain distributed system</li><li>Big idea is that "Frontend" and "Backend" are relics of the past (We are really just distributed systems.)</li></ul><h4 id="think&#95;of&#95;as&#95;games....">Think of as games....</h4><p>What if we thought of it less as "request/response" (webdev) programming and more as a game? Where we have to do local level rendering of a segment of the entire world.</p><h2 id="priyatam&#95;mudivarti">Priyatam Mudivarti</h2><ul><li>Invalidation - How do you inform other users that the current information is no longer valid</li><li>Eviction - How long do I exist?</li><li>Naming - What is th ename of the cache</li><li>{cache-name}-{uid}-{cache-version}-{logical-timestamp}</li><li>In order to properly invalidate things, include a timestamp</li></ul><p>So, for good caching, also include a timestamp as part of the UUID, this way you don't have to revert data, instead you can just increment the timestamp and this will mean the cache is no longer used. Thi smight actually apply to Elasticsearch for my own uses.</p><h2 id="<a href='https://github.com/alexkehayias/chocolatier'>Alex Kehayias (Chocolatier)</a>"><a href='https://github.com/alexkehayias/chocolatier'>Alex Kehayias (Chocolatier)</a></h2><h4 id="problem&#95;with&#95;conventional&#95;game&#95;engines&#95;is">Problem with conventional game engines is</h4><ol><li>you intermingle state and behavior</li><li>Not declarative</li><li>No Interactive development</li></ol><h4 id="entity&#95;component&#95;system">Entity Component system</h4><ul><li>Dungeon Siege & Unit Game Engine</li><li>Basically, it is a map of components (interfaces) that it supports</li><li>Devcards - This guy had a good experience with devcards.</li></ul><h4 id="performance">Performance</h4><ul><li>Variadic function scannot be optimized (use multiple arities instead)</li><li>apply has a real cost (it can not be optimized)</li><li>keyword-equal? is much faster</li><li>defmulti is slow, detype, defrecord, defprotocol is fast</li><li>AVOID INTERMEDIATE COLLECTIONS</li><li>If you now it is a boolean, skip test use ^boolean</li></ul><p>Some great Resources at the end</p><h2 id="matthias&#95;felleisen">Matthias Felleisen</h2><ul><li>All types think types while they create code</li><li>In some programs, we can check programs at compilation time</li><li>He is against Type Inference.</li><li>Hindley-Milner type inference (Ml, Haskell)</li></ul><p>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.</p><h2 id="personal">Personal</h2><p>Good conference. Met a number of people that we can bring in to work if we need their skills. Learned about new technologies in the Clojure community. Specifically, I think the Alexa system might be something we should look into for Reps. Specter might be good for keeping our system as Data and not needing to put everything in a database. The Data science team might like that; of course, it would involve learning clojure. I think that would be a win win for everyone. :]</p>
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts-output/2016-04-21-renoire-revered-and-reviled-movie">&laquo; Renoir: Revered and Reviled</a>
+        
+        
+        <a class="right" href="/posts-output/2015-11-25-a-fire-upon-the-deep-book">A Fire Upon the Deep &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages-output/another-page">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts-output/2019-04-13-Hellboy">Hellboy (2019)</a></li>
+                        
+                        <li><a href="/posts-output/2017-12-23-building-csv-in-clojure">Build a CSV in Clojure</a></li>
+                        
+                        <li><a href="/posts-output/2017-12-21-paginating-on-app-engine">Pagination on Google App Engine Standard</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2019 Stephen Cagle
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>

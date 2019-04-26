@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Unstructured: Soft Scan on Google App Engine</title>
+    <link rel="canonical" href="https://read-line.com/posts-output/2017-01-15-soft-scan-on-google-app-engine">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Unstructured</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages-output/about">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">January 15, 2017</div>
+        
+    </div>
+    <h2>Soft Scan on Google App Engine</h2>
+</div>
+<div>
+    
+    <p><a href='https://cloud.google.com/appengine/'>Google App Engine</a> does not allow for a <a href='https://en.wikipedia.org/wiki/Full_table_scan'>SCAN</a> like operation on a <code>kind</code>. Although this is a hard limit, it can be worked around with some thought. This is my generic solution.</p><h2 id="considerations">Considerations</h2><p>GAE does not allow locking of the database. GAE does not even allow for locking of a <code>kind</code>. Transactions are the only locking mechanism in GAE, and they are limited to the entity groups within the transaction.</p><p> The closest GAE has to a scan (a lock of a <code>kind</code>, where every element of that <code>kind</code> is processed) is a GAE Query; which is a filtered iterator. Queries are "best effort" and are not guaranteed to reflect the current state of the database. Still, they are the best you have.</p><p>Using a iterator would be a O(N) cost, where N is the number of rows of a GAE <code>kind</code> . GAE is all about scaling dynamically. It would be nice if we could divide up the work of processing every row of a <code>kind</code>.</p><h2 id="solution">Solution</h2><p>I have written a system that lets you (probabilistically) process every entity of a <code>kind</code>. It does not hard guarantee that every entity will be processed, but with a sufficient number of retries it does probabilistically guarantee that they after entity has been processed.</p><h2 id="usage">Usage</h2><pre><code>scan&#40;
+  '&lt;kind&gt;', # the Datastore kind that you want to scan
+  retries=1, # a non negative integer, default 1
+  retry-fx=lambda i: i&#42;&#42;2, # i is the retry count, i=0 is always immediate
+  max-retries=2, # a non negative integer, default 2
+&#41;
+</code></pre><p>The <code>handler-path</code> will be called with the <code>urlsafe&#40;&#41;</code> key of every entity of <code>'kind'</code> <code>&lt;kind&gt;</code>. Specifically <code>/&lt;handler-path&gt;/&lt;urlsafekey&gt;</code> will be called for every <code>&lt;kind&gt;</code> entity. If <code>handler-path</code> returns 2xx, it is considered a success; otherwise it is a failure. Failure will cause the task to be re-enqueued in <code>retry-fx&#40;retry-count&#41;</code> seconds.</p><h2 id="example">Example</h2><p>Assume there are 3 Dog entities in the database with urlsafekey's of <code>&quot;rottweiler&quot;</code>, <code>&quot;poodle&quot;</code>, and <code>&quot;dalmation&quot;</code>. Then,</p><pre><code>from scanner import scan
+scan&#40;'Dog', &quot;/add/pedigree&quot;&#41;
+</code></pre><p>will cause the following endpoints to be called.</p><ul><li><code>/add/pedigree/rottweiler</code></li><li><code>/add/pedigree/poodle</code></li><li><code>/add/pedigree/dalmation</code></li></ul><p>This isn't much of a big deal when we are talking about 3 entities. But it is pretty useful when we are talking about thousands or millions of entities. Thanks to this "soft scan" we have the ability to have a function (a endpoint) called on every item of a particular kind in the datastore.</p>
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts-output/2017-02-14-japan-travel-log">&laquo; Trip to Japan!</a>
+        
+        
+        <a class="right" href="/posts-output/2017-01-08-convert-datastore-into-elasticsearch">Convert Google Datastore into Elasticsearch &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages-output/another-page">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts-output/2019-04-13-Hellboy">Hellboy (2019)</a></li>
+                        
+                        <li><a href="/posts-output/2017-12-23-building-csv-in-clojure">Build a CSV in Clojure</a></li>
+                        
+                        <li><a href="/posts-output/2017-12-21-paginating-on-app-engine">Pagination on Google App Engine Standard</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2019 Stephen Cagle
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
