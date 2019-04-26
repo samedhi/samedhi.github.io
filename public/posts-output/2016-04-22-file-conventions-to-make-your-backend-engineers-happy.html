@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Unstructured: File Conventions to make Backend Engineers Happy</title>
+    <link rel="canonical" href="https://read-line.com/posts-output/2016-04-22-file-conventions-to-make-your-backend-engineers-happy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Unstructured</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages-output/about">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">April 22, 2016</div>
+        
+    </div>
+    <h2>File Conventions to make Backend Engineers Happy</h2>
+</div>
+<div>
+    
+    <p>A random list of file conventions that make me happy. Although these do not apply to every situation, they are true enough that you should at least consider them when creating an output file format.</p><h2 id="if&#95;it&#95;is&#95;a&#95;list&#95;of&#95;things,&#95;use&#95;csv">If it is a list of things, use CSV</h2><p>Don't make up your own format. Please. Just use CSV (note: does not have to be commas, any unused delimiter will work, or use quoting characters within your CSV if you have to).</p><h2 id="don't&#95;use&#95;slashes&#95;in&#95;the&#95;filename">Don't use slashes in the filename</h2><p>This hurts. If you include slashes in the filename, it makes is look like the file is actually a directory listing. Furthermore, modern storage system like gcs and s3 don't really have directories (they are really just a bunch of objects in a bucket). However, they will logically present these objects as if they are made up of directories if you include slashes in the names. This is odd because when you download individual files they will download as files. When you view them the files within the s3 viewer they will appear as directories. when you (r)sync the buckets the files  they will appear as directories... It just gets messy. Just don't use directories. Use a flat bucket of files.</p><h2 id="include&#95;everything&#95;of&#95;a&#95;homogenous&#95;type&#95;within&#95;a&#95;single&#95;directory/bucket">Include everything of a homogenous type within a single directory/bucket</h2><p>I think buckets should basically be treated like typed arrays/vectors/list. You should only have a single type of thing within them. Don't mix multiple different types of things as you are then forcing someone using said bucket to filter on what they need. Really, if you have multiple types of things, use multiple buckets.</p><h2 id="make&#95;it&#95;so&#95;the&#95;names&#95;of&#95;files&#95;are&#95;automatically&#95;sorted&#95;in&#95;some&#95;usefull&#95;way">Make it so the names of files are automatically sorted in some usefull way</h2><p>Let me provide an example.</p><pre><code>1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/89/0/rtp.pcap.wav.ctm
+1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/9/0/rtp.pcap.wav.ctm
+1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/90/0/rtp.pcap.wav.ctm
+</code></pre><p><code>9</code> should not logically be between <code>89</code> and <code>90</code>. However, most directory listing operations will list things according to logical text order. Ugly. I think it it would be much better to sufficiently pad such a file so that <code>9</code> does not show up here, something like</p><pre><code>1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/00008/0/rtp.pcap.wav.ctm
+1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/00009/0/rtp.pcap.wav.ctm
+1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/00010/0/rtp.pcap.wav.ctm
+...
+1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/00089/0/rtp.pcap.wav.ctm
+1946304563&#95;66189429@216.221.154.11-66.228.112.5:27832/callee/00090/0/rtp.pcap.wav.ctm
+</code></pre><p>Of course, this involves either:</p><ol><li>Just picking some arbitrary padding that will always be sufficient (famous last words)</li><li>Extending the padding on all previous files whenever you add another digit. So, for instance, when you are on element <code>10</code> you go through all previously written files and change <code>0</code> to <code>00</code>, <code>1</code> to <code>01</code>, <code>2</code> to <code>02</code>, etc.</li></ol><p><em>Let me just say how much I appreciate you doing this for me. You have no idea how anoying it is to have to always</em> <code>itertools.groupby&#40;sorted&#40;os.listdir&#40;path&#41;, key=key&#95;fx1&#41;, key=key&#95;fx2&#41;</code> <em>whenever your filenames does not logically sort. Tiresome.</em></p>
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts-output/2016-04-23-embrace-the-serpent-movie">&laquo; Embrace the Serpent</a>
+        
+        
+        <a class="right" href="/posts-output/2016-04-21-renoire-revered-and-reviled-movie">Renoir: Revered and Reviled &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages-output/another-page">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts-output/2019-04-13-Hellboy">Hellboy (2019)</a></li>
+                        
+                        <li><a href="/posts-output/2017-12-23-building-csv-in-clojure">Build a CSV in Clojure</a></li>
+                        
+                        <li><a href="/posts-output/2017-12-21-paginating-on-app-engine">Pagination on Google App Engine Standard</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2019 Stephen Cagle
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
