@@ -12,11 +12,94 @@ https://read-line.com/
 Ramblings from the REPL
 </description>
 <lastBuildDate>
-Fri, 26 Apr 2019 11:03:45 -0700
+Fri, 03 May 2019 14:13:10 -0700
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+https://read-line.com/posts-output/2019-05-03-map-containment-metadata
+</guid>
+<link>
+https://read-line.com/posts-output/2019-05-03-map-containment-metadata
+</link>
+<title>
+Quick Containment in a Arbitrary Depth Map
+</title>
+<description>
+&lt;p&gt;&lt;a href=&quot;https://clojuredocs.org/clojure.core/contains_q&quot;&gt;&lt;code&gt;contains?&lt;/code&gt;&lt;/a&gt; will check (in the case of a map) for a key within a map. &lt;code&gt;(contains? data v)&lt;/code&gt; returns &lt;code&gt;true&lt;/code&gt; when &lt;code&gt;v&lt;/code&gt; is &lt;code&gt;:a&lt;/code&gt; or &lt;code&gt;:f&lt;/code&gt;. &lt;code&gt;(contains? data :c)&lt;/code&gt; will return &lt;code&gt;false&lt;/code&gt; as &lt;code&gt;:c&lt;/code&gt; is not a top level key in &lt;code&gt;data&lt;/code&gt;. &lt;/p&gt;&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;&lt;p&gt;I want to ask &quot;containment&quot; questions about the keys at ALL levels within a map. I want to be able to determine not just that &lt;code&gt;:a&lt;/code&gt; and &lt;code&gt;:f&lt;/code&gt; are within the map but also that &lt;code&gt;:b&lt;/code&gt;, &lt;code&gt;:c&lt;/code&gt;, &lt;code&gt;:d&lt;/code&gt;, &lt;code&gt;:e&lt;/code&gt;, and &lt;code&gt;:g&lt;/code&gt; are &quot;contained&quot; as well. Conversely, I want to know that &lt;code&gt;:z&lt;/code&gt; is not a key within any map in &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(defn- add-children-metadata [m]
+  (-&amp;gt;&amp;gt; m
+       vals
+       (map (comp :all-keys meta))
+       (apply clojure.set/union (-&amp;gt; m keys set))
+       (assoc (meta m) :all-keys)
+       (with-meta m)))
+
+(defn map-&amp;gt;containment-map
+  &quot;Sets :all-keys metadata for every map in m; :all-keys holds every key in this map and for all submaps&quot;
+  [m]
+  (-&amp;gt; (fn [acc k v]
+        (assoc acc k (if (map? v)
+                       (-&amp;gt; v map-&amp;gt;containment-map add-children-metadata)
+                       v)))
+      (reduce-kv {} m)
+      add-children-metadata))
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(def data {:a {:b nil 
+               :c {:d nil 
+                   :e {}}}
+           :f {:g nil}})
+           
+(def contained-data (map-&amp;gt;containment-map data))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;contained-data&lt;/code&gt; are equal.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(= data contained-data)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The difference is that &lt;code&gt;contained-data&lt;/code&gt; has the &lt;code&gt;:all-keys&lt;/code&gt; key within its metadata.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(-&amp;gt; contained-data meta :all-keys)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;&lt;p&gt;With this metadata, you can ask containment questions about keys at all levels. Each submap within &lt;code&gt;contained-data&lt;/code&gt; also contains &lt;code&gt;:all-keys&lt;/code&gt; in their metadata.&lt;/p&gt;&lt;p&gt;&lt;code&gt;contained-data&lt;/code&gt; contains the key &lt;code&gt;:f&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(-&amp;gt; contained-data meta :all-keys (contains? :f) (= true))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;contained-data&lt;/code&gt; does not contain the key &lt;code&gt;:x&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(-&amp;gt; contained-data meta :all-keys (contains? :x) (= false))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Key &lt;code&gt;:a&lt;/code&gt;  under &lt;code&gt;contained-data&lt;/code&gt; has keys &lt;code&gt;:b&lt;/code&gt; &lt;code&gt;:c&lt;/code&gt; &lt;code&gt;:d&lt;/code&gt; and &lt;code&gt;:e&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(-&amp;gt; contained-data :a meta :all-keys (= #{:b :c :d :e}))
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;&lt;p&gt;That's it. You can use the &lt;code&gt;:all-keys&lt;/code&gt; metadata to either:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Do fast containment lookup of all keys within a map.&lt;/li&gt;&lt;li&gt;Get a sequence of all (unique) keys within a map.&lt;/li&gt;&lt;/ol&gt;
+</description>
+<pubDate>
+Fri, 03 May 2019 00:00:00 -0700
+</pubDate>
+</item>
+<item>
+<guid>
+https://read-line.com/posts-output/2019-04-24-this-to-that
+</guid>
+<link>
+https://read-line.com/posts-output/2019-04-24-this-to-that
+</link>
+<title>
+This To That
+</title>
+<description>
+&lt;p&gt;I need something that converts a particular key/value within a  sequence of maps into a single map. &lt;code&gt;this-&amp;gt;that&lt;/code&gt; will do nicely.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(defn this-&amp;gt;that [this that vs]
+  &quot;Build a map out of sequence vs; taking `this` as the key and `that` as the value from each&quot;
+  (reduce
+   (fn [acc v] (assoc acc (this v) (that v)))
+   {}
+   vs))
+;; -&amp;gt; {:key-1 :value-1, :key-2 :value-2}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let's create some data for this example.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(def data 
+  [{:id 1 :email &quot;mouse@hanna-barbera.com&quot; :name &quot;Bullwinkle J. Mouse&quot;}
+   {:id 2 :email &quot;squirrel@hanna-barbera.com&quot; :name &quot;Rocky the Flying Squirrel&quot;}
+   {:id 3 :email &quot;boris@hanna-barbera.com&quot; :name &quot;Boris Badenov&quot;}
+   {:id 4 :email &quot;ffetale@hanna-barbera.com&quot; :name &quot;Natasha Fatale&quot;}
+   {:id 5 :email &quot;leader@hanna-barbera.com&quot; :name &quot;Fearless Leader&quot;}])
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With &lt;code&gt;this-&amp;gt;that&lt;/code&gt; and our &lt;code&gt;data&lt;/code&gt;, we can now create a map of &lt;code&gt;:id&lt;/code&gt; to &lt;code&gt;:email&lt;/code&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(defn id-&amp;gt;email [vs]
+  (this-&amp;gt;that :id :email vs))
+(id-&amp;gt;email data)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Or &lt;code&gt;:id&lt;/code&gt; to &lt;code&gt;:name&lt;/code&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(defn id-&amp;gt;name [vs]
+  (this-&amp;gt;that :id :name vs))
+(id-&amp;gt;name data)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;interesting&quot;&gt;Interesting&lt;/h1&gt;&lt;p&gt;Within &lt;code&gt;this-&amp;gt;that&lt;/code&gt; the arguments &lt;code&gt;this&lt;/code&gt; and &lt;code&gt;that&lt;/code&gt; are being &lt;em&gt;called&lt;/em&gt;. This must mean that keywords (&lt;code&gt;:id&lt;/code&gt;, &lt;code&gt;:email&lt;/code&gt;, and &lt;code&gt;:name&lt;/code&gt; in our case) are callable as functions! &lt;code&gt;this-&amp;gt;that&lt;/code&gt; actually takes two functions as the &lt;code&gt;this&lt;/code&gt; and &lt;code&gt;that&lt;/code&gt; arguments. &lt;code&gt;this-&amp;gt;that&lt;/code&gt; can take a sequence of any type in &lt;code&gt;vs&lt;/code&gt;, provided that you can write functions to pull values from every element in &lt;code&gt;vs&lt;/code&gt;. &lt;/p&gt;&lt;p&gt;Let's illustrate the equivalency of keywords and functions below.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;klipse-cljs nohighlight&quot;&gt;(= (this-&amp;gt;that :id :name data)
+   (this-&amp;gt;that #(:id %) #(:name %) data))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<pubDate>
+Wed, 24 Apr 2019 00:00:00 -0700
+</pubDate>
+</item>
 <item>
 <guid>
 https://read-line.com/posts-output/2019-04-13-Hellboy
