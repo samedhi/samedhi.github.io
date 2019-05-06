@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Unstructured: Soft Scan on Google App Engine</title>
-    <link rel="canonical" href="https://read-line.com/posts-output/2017-01-15-soft-scan-on-google-app-engine">
+    <title>Unstructured: Push Blog to Github Hosting using Planck</title>
+    <link rel="canonical" href="https://read-line.com/posts-output/2019-05-06-push-blog-to-github-hosting">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
           type="text/css">
@@ -54,31 +54,21 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">January 15, 2017</div>
+        <div class="col-lg-6">May 6, 2019</div>
         
     </div>
-    <h2>Soft Scan on Google App Engine</h2>
+    <h2>Push Blog to Github Hosting using Planck</h2>
 </div>
 <div>
     
-    <p><a href='https://cloud.google.com/appengine/'>Google App Engine</a> does not allow for a <a href='https://en.wikipedia.org/wiki/Full_table_scan'>SCAN</a> like operation on a <code>kind</code>. Although this is a hard limit, it can be worked around with some thought. This is my generic solution.</p><h2 id="considerations">Considerations</h2><p>GAE does not allow locking of the database. GAE does not even allow for locking of a <code>kind</code>. Transactions are the only locking mechanism in GAE, and they are limited to the entity groups within the transaction.</p><p> The closest GAE has to a scan (a lock of a <code>kind</code>, where every element of that <code>kind</code> is processed) is a GAE Query; which is a filtered iterator. Queries are "best effort" and are not guaranteed to reflect the current state of the database. Still, they are the best you have.</p><p>Using a iterator would be a O(N) cost, where N is the number of rows of a GAE <code>kind</code> . GAE is all about scaling dynamically. It would be nice if we could divide up the work of processing every row of a <code>kind</code>.</p><h2 id="solution">Solution</h2><p>I have written a system that lets you (probabilistically) process every entity of a <code>kind</code>. It does not hard guarantee that every entity will be processed, but with a sufficient number of retries it does probabilistically guarantee that they after entity has been processed.</p><h2 id="usage">Usage</h2><pre><code>scan&#40;
-  '&lt;kind&gt;', # the Datastore kind that you want to scan
-  retries=1, # a non negative integer, default 1
-  retry-fx=lambda i: i&#42;&#42;2, # i is the retry count, i=0 is always immediate
-  max-retries=2, # a non negative integer, default 2
-&#41;
-</code></pre><p>The <code>handler-path</code> will be called with the <code>urlsafe&#40;&#41;</code> key of every entity of <code>'kind'</code> <code>&lt;kind&gt;</code>. Specifically <code>/&lt;handler-path&gt;/&lt;urlsafekey&gt;</code> will be called for every <code>&lt;kind&gt;</code> entity. If <code>handler-path</code> returns 2xx, it is considered a success; otherwise it is a failure. Failure will cause the task to be re-enqueued in <code>retry-fx&#40;retry-count&#41;</code> seconds.</p><h2 id="example">Example</h2><p>Assume there are 3 Dog entities in the database with urlsafekey's of <code>&quot;rottweiler&quot;</code>, <code>&quot;poodle&quot;</code>, and <code>&quot;dalmation&quot;</code>. Then,</p><pre><code>from scanner import scan
-scan&#40;'Dog', &quot;/add/pedigree&quot;&#41;
-</code></pre><p>will cause the following endpoints to be called.</p><ul><li><code>/add/pedigree/rottweiler</code></li><li><code>/add/pedigree/poodle</code></li><li><code>/add/pedigree/dalmation</code></li></ul><p>This isn't much of a big deal when we are talking about 3 entities. But it is pretty useful when we are talking about thousands or millions of entities. Thanks to this "soft scan" we have the ability to have a function (a endpoint) called on every item of a particular kind in the datastore.</p>
+    <p>I wanted the opportunity to try out <a href='https://planck-repl.org/'>Planck</a> <a href='https://planck-repl.org/guide-all.html'>(User Guide)</a> <a href='https://planck-repl.org/sdk.html'>(SDK)</a>, which lets you write shell scripts in clojurescript. </p><p>Wrote a small script to upload my blog into Github hosting. </p><p>Like the fact that it mixes the clojurescript code with the shell commands <code>&#40;sh ...&#41;</code>. One can use simple shell commands and compose them with clojurescript. Loose the value of pipping and shell expansions, but sometimes that is a reasonable trade-off.</p><p><script src="https://gist.github.com/samedhi/44c33488daed9cac8a44d49f56e6d8fe.js"></script></p>
 </div>
 
 
     <div id="prev-next">
         
-        <a href="/posts-output/2017-02-14-japan-travel-log">&laquo; Trip to Japan!</a>
         
-        
-        <a class="right" href="/posts-output/2017-01-08-convert-datastore-into-elasticsearch">Convert Google Datastore into Elasticsearch &raquo;</a>
+        <a class="right" href="/posts-output/2019-05-03-map-containment-metadata">Quick Containment in a Arbitrary Depth Map &raquo;</a>
         
     </div>
 
